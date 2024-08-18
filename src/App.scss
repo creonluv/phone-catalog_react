@@ -1,3 +1,13 @@
-.starter {
-  font-size: 18px;
+@use './shared/global/utils/mixins' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__container {
+    flex: 1;
+    margin-top: 24px;
+    margin-bottom: 80px;
+  }
 }
