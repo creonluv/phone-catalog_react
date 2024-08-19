@@ -11,15 +11,16 @@ A single-page application implements online store functionality. User can browse
 - JSX
 - TypeScript
 - JavaScript
-- LoDash
-- Fetch, API
 - Sass (SCSS)
 - CSS Modules
 - BEM methodology
+- Fetch, API
+- Redux Toolkit
 
 ## Features
 
 - **Adaptive layout:** Guarantees a fluid and responsive experience across various devices (phones, tablets, desktops).
+- **Redux Toolkit Integration:** The entire project is built and managed using Redux Toolkit, ensuring efficient, scalable, and consistent state management throughout the application.
 - **Slide-out menu:** Tailored for mobile users, offering an easy-to-use navigation method.
 - **Persistent cart and favorites:** Leverages local storage to keep shopping cart items and favorite products intact between sessions.
 - **Product filtering:** Provides a straightforward way for users to filter products according to their needs.
@@ -35,15 +36,18 @@ To run this project locally, you will need:
 ## Installation and Running
 
 1. Clone the repository:
+   
    ```bash
    git clone https://github.com/creonluv/phone-catalog_react
    cd todo-app
    ```
-2. Install dependencies:
+3. Install dependencies:
+   
    ```bash
    npm install
    ```
-3. Start the project:
+5. Start the project:
+   
    ```bash
    npm start
    ```
@@ -52,5 +56,7 @@ To run this project locally, you will need:
 ## Author
 
 Developed by Ivan Shlikhutka. You can reach me via:
+
 Email: tixehack@gmail.com
-[Linkedin](https://www.linkedin.com/in/ivanshlikhutka/)
+
+Linkedin: (https://www.linkedin.com/in/ivanshlikhutka/)
