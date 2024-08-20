@@ -42,6 +42,16 @@ export const BasketPage = () => {
     }, 0);
   };
 
+  const allCountOfProducts = () => {
+    return selectedProducts.reduce((total, item) => {
+      if (item.quantity && item.priceDiscount) {
+        return total + item.quantity;
+      }
+
+      return total;
+    }, 0);
+  };
+
   return (
     <section className={styles.basketpage}>
       <div className={styles.basketpage__content}>
@@ -74,6 +84,11 @@ export const BasketPage = () => {
                   <button
                     className={styles.basketpage__sign}
                     onClick={() => handleMinusCounter(item.id)}
+                    disabled={item.quantity === 1}
+                    style={{
+                      cursor: item.quantity === 1 ? 'not-allowed' : 'pointer',
+                      opacity: item.quantity === 1 ? 0.4 : 1,
+                    }}
                   >
                     -
                   </button>
@@ -102,7 +117,7 @@ export const BasketPage = () => {
             <h3 className={styles.basketpage__price}>${allSumOfProducts()}</h3>
             <span className={styles.basketpage__divider}></span>
             <p className={styles.basketpage__info}>
-              Total for {selectedProducts.length} items
+              Total for {allCountOfProducts()} items
             </p>
             <button
               className={styles.basketpage__button}
