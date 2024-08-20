@@ -2,10 +2,10 @@ import { Categories } from '../../components/categories/Categories';
 import { PhotoSlider } from '../../components/photoSlider';
 import { ProductSlider } from '../../components/productSlider';
 import styles from './HomePage.module.scss';
-import { useFetchProducts } from '../../helpers/useFetchProducts';
+import { useProductData } from '../../helpers/useProductData';
 
 export const HomePage = () => {
-  const { phones } = useFetchProducts('phones');
+  const { firstNinePhones, salesNinePhones } = useProductData();
 
   return (
     <>
@@ -14,9 +14,9 @@ export const HomePage = () => {
           Welcome to Nice Gadgets store!
         </h1>
         <PhotoSlider />
-        <ProductSlider type="Brand new models" products={phones} />
+        <ProductSlider type="Brand new models" products={firstNinePhones} />
         <Categories />
-        <ProductSlider type="Hot prices" products={phones} />
+        <ProductSlider type="Hot prices" products={salesNinePhones} />
       </section>
     </>
   );

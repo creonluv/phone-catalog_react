@@ -10,6 +10,7 @@ import { SkeletonTheme } from 'react-loading-skeleton';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
+import ScrollToTop from './components/scrollToTop/scrollToTop';
 
 export const Root = () => {
   return (
@@ -17,6 +18,7 @@ export const Root = () => {
       <SkeletonTheme baseColor="#e2e6e9" highlightColor="#b4bdc3">
         <ContextProvider>
           <Router>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<App />}>
                 <Route index element={<HomePage />} />

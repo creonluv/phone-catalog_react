@@ -46,13 +46,13 @@ export const ProductPage: React.FC<Props> = ({ type }) => {
 
   if (type === 'phones') {
     product = phones.find(phone => phone.id === productId);
-    productsSlider = phones;
+    productsSlider = phones.slice(0, 9);
   } else if (type === 'tablets') {
     product = tablets.find(tablet => tablet.id === productId);
-    productsSlider = tablets;
+    productsSlider = tablets.slice(0, 9);
   } else if (type === 'accessories') {
     product = accessories.find(accessor => accessor.id === productId);
-    productsSlider = accessories;
+    productsSlider = accessories.slice(0, 9);
   }
 
   return (
