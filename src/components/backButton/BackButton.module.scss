@@ -5,12 +5,30 @@
 
 .backbutton {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 8px;
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
+  position: relative;
 
-  &__text {
-    color: $secondary-text-color;
+  &:hover .backbutton__text::after {
+    width: 100%;
+  }
+}
+
+.backbutton__text {
+  margin-left: 8px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1.5px;
+    background-color: $accent-color;
+    transition: width 0.3s ease;
   }
 }

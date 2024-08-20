@@ -8,6 +8,8 @@ import { ProductSearch } from '../productSearch';
 import { useAppSelector } from '../../app/hooks';
 import { RootState } from '../../app/store';
 
+import { allCountOfProducts } from '../../helpers/calculateTotalQuantity';
+
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { selectedProducts } = useAppSelector(
@@ -23,6 +25,8 @@ export const Header = () => {
     location.pathname === '/phones' ||
     location.pathname === '/tablets' ||
     location.pathname === '/accessories';
+
+  const totalQuantity = allCountOfProducts(selectedProducts);
 
   return (
     <>
@@ -75,9 +79,7 @@ export const Header = () => {
                 src="img/icons/cart.svg"
               />
               {selectedProducts.length > 0 && (
-                <div className={styles.header__infolabel}>
-                  {selectedProducts.length}
-                </div>
+                <div className={styles.header__infolabel}>{totalQuantity}</div>
               )}
             </NavLink>
           </div>

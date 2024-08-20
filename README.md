@@ -36,21 +36,24 @@ To run this project locally, you will need:
 ## Installation and Running
 
 1. Clone the repository:
-   
+
    ```bash
    git clone https://github.com/creonluv/phone-catalog_react
    cd todo-app
    ```
-3. Install dependencies:
-   
+
+2. Install dependencies:
+
    ```bash
    npm install
    ```
-5. Start the project:
-   
+
+3. Start the project:
+
    ```bash
    npm start
    ```
+
    Open your browser and go to http://localhost:3000 to view your application.
 
 ## Author
@@ -60,3 +63,5 @@ Developed by Ivan Shlikhutka. You can reach me via:
 Email: tixehack@gmail.com
 
 Linkedin: (https://www.linkedin.com/in/ivanshlikhutka/)
+
+Github: (https://github.com/creonluv/)

@@ -12,6 +12,7 @@ import {
   setSelectedProducts,
 } from '../../features/basket';
 import { useAppSelector } from '../../app/hooks';
+import { allCountOfProducts } from '../../helpers/calculateTotalQuantity';
 
 export const BasketPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -42,15 +43,7 @@ export const BasketPage = () => {
     }, 0);
   };
 
-  const allCountOfProducts = () => {
-    return selectedProducts.reduce((total, item) => {
-      if (item.quantity && item.priceDiscount) {
-        return total + item.quantity;
-      }
-
-      return total;
-    }, 0);
-  };
+  const totalQuantity = allCountOfProducts(selectedProducts);
 
   return (
     <section className={styles.basketpage}>
@@ -117,7 +110,7 @@ export const BasketPage = () => {
             <h3 className={styles.basketpage__price}>${allSumOfProducts()}</h3>
             <span className={styles.basketpage__divider}></span>
             <p className={styles.basketpage__info}>
-              Total for {allCountOfProducts()} items
+              Total for {totalQuantity} items
             </p>
             <button
               className={styles.basketpage__button}
