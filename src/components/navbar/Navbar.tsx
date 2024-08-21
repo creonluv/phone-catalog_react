@@ -29,9 +29,12 @@ export const Navbar: React.FC<Props> = ({
       >
         {navBarLinkItems.map(item => (
           <li className={navbarStyles.navbar__item} key={item}>
-            {isOpen}
             <NavLink
-              to={`/${item === 'home' ? '' : item}`}
+              to={
+                item === 'github'
+                  ? 'https://github.com/creonluv/'
+                  : `/${item === 'home' ? '' : item}`
+              }
               onClick={onClick}
               className={({ isActive }) =>
                 classNames(navbarStyles.navbar__itemlink, {
@@ -39,6 +42,8 @@ export const Navbar: React.FC<Props> = ({
                     isActive && !withoutUnderline,
                 })
               }
+              target={item === 'github' ? '_blank' : undefined}
+              rel={item === 'github' ? 'noopener noreferrer' : undefined}
             >
               {item}
             </NavLink>
